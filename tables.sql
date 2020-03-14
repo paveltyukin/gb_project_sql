@@ -1,8 +1,8 @@
-CREATE SCHEMA online_game2 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE SCHEMA online_game DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 USE online_game2;
 
-CREATE TABLE online_game2.users (
+CREATE TABLE online_game.users (
 	`user_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`user_name` VARCHAR(100) NOT NULL,
 	`user_password` VARCHAR(100) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE online_game2.users (
 	`user_telephone` VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE online_game2.profiles (
+CREATE TABLE online_game.profiles (
 	`profile_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`user_id` INT UNSIGNED NOT NULL,
 	`p_first_name` VARCHAR(100) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE online_game2.profiles (
 		ON UPDATE CASCADE
 );
 
-CREATE TABLE online_game2.heroes (
+CREATE TABLE online_game.heroes (
 	`hero_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`hero_name` VARCHAR(100) NOT NULL,
 	`profile_id` INT UNSIGNED NOT NULL,
