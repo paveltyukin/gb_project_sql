@@ -1,7 +1,7 @@
 -- Функция возвращает средний возраст участников клана,
 -- который вводит администратор БД при вызове функции.
 
-CREATE FUNCTION avgClansUsres(clanName VARCHAR(255)) RETURNS DECIMAL(5,1)
+CREATE FUNCTION avgClansUsers(clanName VARCHAR(255)) RETURNS DECIMAL(5,1)
     READS SQL DATA
 BEGIN
 	
