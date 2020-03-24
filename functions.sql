@@ -1,11 +1,11 @@
 -- Функция возвращает средний возраст участников клана,
 -- который вводит администратор БД при вызове функции.
 
-CREATE FUNCTION avgClansUsres(clanName VARCHAR(255)) RETURNS FLOAT(5,1)
+CREATE FUNCTION avgClansUsres(clanName VARCHAR(255)) RETURNS DECIMAL(5,1)
     READS SQL DATA
 BEGIN
 	
-	DECLARE avgUsers FLOAT(5,1);
+	DECLARE avgUsers DECIMAL(5,1);
 
 	SELECT
 		ROUND(AVG(DATE_FORMAT(CURDATE() , '%Y') - DATE_FORMAT(up.birthday, '%Y')), 1) INTO avgUsers
@@ -23,11 +23,11 @@ END
 -- Функция возвращает максимальную цену, которая показывается в прайс-листе пользователю, 
 -- который участвовал в соревнованиях на текущей неделе, из клана, 
 -- который вводит администратор БД.
-CREATE FUNCTION maxPriceClansUsers(clanName VARCHAR(255)) RETURNS float(5,1)
+CREATE FUNCTION maxPriceClansUsers(clanName VARCHAR(255)) RETURNS DECIMAL(5,1)
     READS SQL DATA
 BEGIN
 	
-	DECLARE maxPrice FLOAT(5,1);
+	DECLARE maxPrice DECIMAL(5,1);
 
 	SELECT
 		MAX(pl.current_price) INTO maxPrice

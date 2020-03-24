@@ -1,6 +1,6 @@
 -- Показать последние 7 сообщений ползователей, 
 -- которые были активены в течение последних 7 дней
-CREATE VIEW LAST7MESSAGES AS
+CREATE VIEW last7Messages AS
 SELECT
     user_chat.message AS `Message`,
     DATE_FORMAT(user_chat.send_at, '%d-%m-%Y %H:%i') AS `Send`
@@ -15,7 +15,7 @@ LIMIT 7;
 
 -- Показать имя, фамилию пользователя, 
 -- который участвовал в соревнованиях последние 7 дней
-CREATE VIEW ACTIVEUSERS7DAYS AS
+CREATE VIEW activeUsers7Days AS
 SELECT 
 	user_profiles.first_name, 
 	user_profiles.last_name 
